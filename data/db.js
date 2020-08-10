@@ -1,5 +1,6 @@
 const knex = require('knex');
 const knexConfig = require('../knexfile.js');
+const { post } = require('../posts/posts-router.js');
 const db = knex(knexConfig.development);
 
 module.exports = {
@@ -19,6 +20,7 @@ function find() {
 
 function findById(id) {
   return db('posts').where({ id: Number(id) });
+  
 }
 
 function insert(post) {
