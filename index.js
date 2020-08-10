@@ -1,11 +1,11 @@
 const express = require("express")
-const users = require("./users/users-model")
-const usersRouter = require("./users/users-router");
-const welcomeRouter = require("./wlecome/welcome-router");
+const postRouter = require("./posts/posts-router");
 
 const server = express()
 const port = 4000
 
+server.use(express.json())
+server.use(postRouter);
 
 // start the server
 server.listen(port, () => {
